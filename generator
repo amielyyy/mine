@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stub and Bundle Generator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  button {
+    padding: 20px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border: black;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+  <h1>Stub and Bundle Generator</h1>
+  <p>Choose whether you want to input stubs or bundles:</p>
+  <select id="choice">
+    <option value="1">Stubs</option>
+    <option value="2">Bundles</option>
+  </select><br><br>
+  <input type="number" id="inputValue" placeholder="Enter number of stubs or bundles"><br><br>
+  <button onclick="calculateOutcome()">Generate Outcome</button>
+  <p id="result"></p>
+
+  <script>
+    function calculateOutcome() {
+      var choice = document.getElementById("choice").value;
+      var inputValue = parseInt(document.getElementById("inputValue").value);
+      var outcome = "";
+
+      if (choice === "1") {
+        var stubsValue = inputValue * 20;
+        outcome = "Outcome: " + stubsValue + " pesos";
+      } else if (choice === "2") {
+        var bundlesValue = inputValue * 100;
+        outcome = "Outcome: " + bundlesValue + " pesos";
+      } else {
+        outcome = "Invalid choice";
+      }
+
+      document.getElementById("result").innerHTML = outcome;
+    }
+  </script>
+</body>
+</html>
